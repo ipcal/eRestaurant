@@ -71,7 +71,7 @@ public class Restaurant implements Serializable{
 	}
 	
 	@Id
-    @GeneratedValue
+    //@GeneratedValue
     @Column(name="restaurant_id")
     public String getRestaurantId() {
 		return restaurantId;

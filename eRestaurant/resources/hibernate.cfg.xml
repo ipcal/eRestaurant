@@ -17,7 +17,10 @@
   <property name="hibernate.current_session_context_class">thread</property>
 
 <mapping class="eres.model.Restaurant" />
-
+<mapping class="eres.model.Users" />
+<mapping class="eres.model.Reservation" />
+<mapping class="eres.model.Order" />
+<mapping class="eres.model.Food" />
 	</session-factory>
 
 </hibernate-configuration>

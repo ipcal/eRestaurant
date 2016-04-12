@@ -27,7 +27,7 @@ public class RestaurantAction extends ActionSupport {
     }
  
     public String add() {
-        System.out.println(getRestaurant());
+        System.out.println("restaurant.add:"+getRestaurant());
         try {
         	restaurantManager.add(getRestaurant());
         } catch (Exception e) {

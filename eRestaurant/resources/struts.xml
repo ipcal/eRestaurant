@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC
-    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
-    "http://struts.apache.org/dtds/struts-2.0.dtd">
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-	<constant name="struts.enable.DynamicMethodInvocation"
-		value="false" />
-	<constant name="struts.devMode" value="false" />
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
 
 	<package name="default" extends="struts-default" namespace="/">
+		<action name="addUser" class="eres.view.UsersAction" method="add">
+			<result name="success" type="chain" >index</result>
+		</action>
+		
+		<action name="login" class="eres.view.LoginAction" method="login">
+			<result name="success">/index.jsp</result>
+			<result name="error" >/login.jsp</result>
+		</action>
+		
+		<action name="logout" class="eres.view.LoginAction" method="logout">
+			<result name="success">/index.jsp</result>
+		</action>
 
 		<action name="add"
 			class="eres.view.RestaurantAction" method="add">
@@ -20,10 +32,42 @@
 			class="eres.view.RestaurantAction" method="delete">
 			<result name="success" type="chain">index</result>
 		</action>
+		
+		<action name="Acc_Set_page"
+			class="eres.view.LoginAction" method="getInfo">
+			<result name="success">/accSetting.jsp</result>
+		</action>
+		<action name="changepw_page"
+			class="eres.view.LoginAction" method="getInfo">
+			<result name="success">/changepw.jsp</result>
+		</action>
+		<action name="order_page"
+			class="eres.view.FoodAction" method="getFoodByMenuID">
+			<result name="success">/order.jsp</result>	
+		</action>
+		
+		<action name="update_user"
+			class="eres.view.UsersAction" method="update">
+			<result name="success">/accSetting.jsp</result>
+		</action>
+		
+		<action name="change_pw"
+			class="eres.view.UsersAction" method="updatePw">
+			<result name="success">/changepw.jsp</result>
+		</action>
+		
+		<action name="add_reservation"
+			class="eres.view.ReservationAction" method="add">
+			<result name="success">/reservation.jsp</result>
+			<result name="input">/reservation.jsp</result>
+		</action>
 
 		<action name="index"
 			class="eres.view.RestaurantAction">
 			<result name="success">index.jsp</result>
 		</action>
 	</package>
+
+    <!-- Add packages here -->
+
 </struts>
