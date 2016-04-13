@@ -1,5 +1,7 @@
 package eres.controller;
 
+import java.util.List;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 
